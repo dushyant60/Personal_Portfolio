@@ -67,7 +67,13 @@ export const DisplacementSphere = props => {
 
     scene.current = new Scene();
 
-    material.current = new MeshPhongMaterial();
+    material.current = new MeshPhongMaterial({
+      color: 0x1e90ff, // Dodger blue base color
+      emissive: 0xff4500, // Orange-red glow
+      emissiveIntensity: 0.1,
+      shininess: 100, // High gloss
+    });
+
     material.current.onBeforeCompile = shader => {
       uniforms.current = UniformsUtils.merge([
         shader.uniforms,
@@ -94,8 +100,8 @@ export const DisplacementSphere = props => {
   }, []);
 
   useEffect(() => {
-    const dirLight = new DirectionalLight(0xffffff, theme === 'light' ? 1.8 : 2.0);
-    const ambientLight = new AmbientLight(0xffffff, theme === 'light' ? 2.7 : 0.4);
+    const dirLight = new DirectionalLight(0x4682b4, theme === 'light' ? 2.5 : 3.0); // Steel blue for uniqueness
+const ambientLight = new AmbientLight(0x87ceeb, theme === 'light' ? 3.0 : 1.5); // Sky blue
 
     dirLight.position.z = 200;
     dirLight.position.x = 100;

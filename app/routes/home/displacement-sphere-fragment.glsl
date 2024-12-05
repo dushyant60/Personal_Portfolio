@@ -38,44 +38,61 @@ varying float noise;
 #include <clipping_planes_pars_fragment>
 
 void main() {
+  #include <clipping_planes_fragment>
 
-	#include <clipping_planes_fragment>
+  // Dominant blue base with dynamic shifts
+  vec3 baseColor = vec3(0.2, 0.4 + 0.4 * sin(time + vUv.x * 6.28), 0.8 + 0.2 * cos(time + vUv.y * 6.28));
+  
+  // Add noise-driven variations to enhance texture richness
+  vec3 colorVariation = vec3(0.1 * noise, 0.1 * noise, noise * 0.5);
+  vec3 finalColors = baseColor + colorVariation;
 
-  vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
-  vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
-  vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
+  // Pulsing blue glow for emissive
+  vec3 dynamicEmissive = emissive + vec3(0.1, 0.2, 0.6 * (0.5 + 0.5 * sin(time * 2.0)));
+
+  // Create diffuse color with blue dominance
+  vec4 diffuseColor = vec4(finalColors * (1.0 - noise), opacity);
+
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
-  vec3 totalEmissiveRadiance = emissive;
+  vec3 totalEmissiveRadiance = dynamicEmissive;
 
-	#include <logdepthbuf_fragment>
-	#include <map_fragment>
-	#include <color_fragment>
-	#include <alphamap_fragment>
-	#include <alphatest_fragment>
-	#include <alphahash_fragment>
-	#include <specularmap_fragment>
-	#include <normal_fragment_begin>
-	#include <normal_fragment_maps>
-	#include <emissivemap_fragment>
+  #include <logdepthbuf_fragment>
+  #include <map_fragment>
+  #include <color_fragment>
+  #include <alphamap_fragment>
+  #include <alphatest_fragment>
+  #include <alphahash_fragment>
+  #include <specularmap_fragment>
+  #include <normal_fragment_begin>
+  #include <normal_fragment_maps>
+  #include <emissivemap_fragment>
 
-	// accumulation
-	#include <lights_phong_fragment>
-	#include <lights_fragment_begin>
-	#include <lights_fragment_maps>
-	#include <lights_fragment_end>
+  // Standard Phong lighting calculations
+  #include <lights_phong_fragment>
+  #include <lights_fragment_begin>
+  #include <lights_fragment_maps>
+  #include <lights_fragment_end>
 
-	// modulation
-	#include <aomap_fragment>
+  // Ambient occlusion
+  #include <aomap_fragment>
 
-	vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
+  // Final light accumulation
+  vec3 outgoingLight = reflectedLight.directDiffuse 
+                     + reflectedLight.indirectDiffuse 
+                     + reflectedLight.directSpecular 
+                     + reflectedLight.indirectSpecular 
+                     + totalEmissiveRadiance;
 
-	#include <envmap_fragment>
-	#include <opaque_fragment>
-	#include <tonemapping_fragment>
-	#include <colorspace_fragment>
-	#include <fog_fragment>
-	#include <premultiplied_alpha_fragment>
-	#include <dithering_fragment>
+  // Environment mapping and post-processing
+  #include <envmap_fragment>
 
-  gl_FragColor = vec4(outgoingLight, diffuseColor.a);
+  // Output final color with dominant blue and glow
+  gl_FragColor = vec4(outgoingLight * finalColors, diffuseColor.a);
+
+  #include <opaque_fragment>
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+  #include <fog_fragment>
+  #include <premultiplied_alpha_fragment>
+  #include <dithering_fragment>
 }

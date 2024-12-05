@@ -38,11 +38,6 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
       data-featured={!!featured}
       style={index !== undefined ? cssProps({ delay: index * 100 + 200 }) : undefined}
     >
-      {featured && (
-        <Text className={styles.postLabel} size="s">
-          Featured
-        </Text>
-      )}
       {featured && !!banner && (
         <div className={styles.postImage}>
           <Image
@@ -76,7 +71,7 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
           </Text>
           <div className={styles.postFooter}>
             <Button secondary iconHoverShift icon="chevron-right" as="div">
-              Read article
+              Read Blog
             </Button>
             <Text className={styles.timecode} size="s">
               {timecode}
@@ -84,11 +79,6 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
           </div>
         </div>
       </RouterLink>
-      {featured && (
-        <Text aria-hidden className={styles.postTag} size="s">
-          477
-        </Text>
-      )}
     </article>
   );
 }
@@ -142,7 +132,7 @@ export function Articles() {
   const postsHeader = (
     <header className={styles.header}>
       <Heading className={styles.heading} level={5} as="h1">
-        <DecoderText text="Latest articles" />
+        <DecoderText text="Latest Blogs" />
       </Heading>
       <Barcode className={styles.barcode} />
     </header>

@@ -10,7 +10,7 @@ export const navLinks = [
     pathname: '/#details',
   },
   {
-    label: 'Articles',
+    label: 'Blogs',
     pathname: '/articles',
   },
   {
@@ -21,18 +21,18 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Bluesky',
-    url: `https://bsky.app/profile/${config.bluesky}`,
-    icon: 'bluesky',
+    label: 'SuperProf',
+    url: `https://www.superprof.co.in/experienced-professional-offering-comprehensive-lessons-basic-computing-web-development-windows-and-databases.html`,
+    icon: 'superprof',
   },
   {
-    label: 'Figma',
-    url: `https://www.figma.com/${config.figma}`,
-    icon: 'figma',
+    label: 'linkedin',
+    url: `https://www.linkedin.com/in/dushyant60`,
+    icon: 'linkedin',
   },
   {
     label: 'Github',
-    url: `https://github.com/${config.github}`,
+    url: `https://github.com/dushyant60`,
     icon: 'github',
   },
 ];
