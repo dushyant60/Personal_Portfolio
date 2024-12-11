@@ -1,15 +1,15 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import avatarTexture2Large from '~/assets/avatarTexture2Large.png';
+import avatarTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
+import avatarTexture2 from '~/assets/avatarTexture2.png';
+import avatarTextureLarge from '~/assets/avatarTextureLarge.png';
+import avatarTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
+import avatarTexture from '~/assets/avatarTexture.png';
+import vachTextureLarge from '~/assets/vachTextureLarge.png';
+import vachTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
+import vachTexture from '~/assets/vachTexture.png';
+import websiteTexture from '~/assets/website_image.png';
+import websiteTextureLarge from '~/assets/website_image_large.png';
+import websiteTexturePlaceholder from '~/assets/website_image_placeholder.jpg'
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -18,7 +18,7 @@ import { ProjectSummary } from './project-summary';
 import { useEffect, useRef, useState, lazy, useMemo, Suspense } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
-import { Earth, EarthSection } from '../projects.smart-sparrow/earth';
+import { Earth, EarthSection } from '../projects.call-center-analysis/earth';
 import { ThemeProvider } from '~/components/theme-provider';
 import {
   ProjectSection,
@@ -117,17 +117,17 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
+        title="The Future of Call Center Analytics"
+        description="Created a Full Stack Gen-AI driven web application for call center analytics."
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="/projects/call-center-analysis"
         model={{
           type: 'laptop',
           alt: 'Smart Sparrow lesson builder',
           textures: [
             {
-              srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
-              placeholder: sprTexturePlaceholder,
+              srcSet: `${vachTexture} 1280w, ${vachTextureLarge} 2560w`,
+              placeholder: vachTexturePlaceholder,
             },
           ],
         }}
@@ -138,21 +138,21 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        title="TTS Avatar Sales Agent."
+        description="An fully functional TTS Avatar Assistance for handleing the sales, demo and pitching for automobiles industry."
+        buttonText="View Project"
+        buttonLink="https://github.com/dushyant60/Video_Avatar/blob/main/README.md"
         model={{
           type: 'phone',
           alt: 'App login screen',
           textures: [
             {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
-              placeholder: gamestackTexturePlaceholder,
+              srcSet: `${avatarTexture} 375w, ${avatarTextureLarge} 750w`,
+              placeholder: avatarTexturePlaceholder,
             },
             {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
-              placeholder: gamestackTexture2Placeholder,
+              srcSet: `${avatarTexture2} 375w, ${avatarTexture2Large} 750w`,
+              placeholder: avatarTexture2Placeholder,
             },
           ],
         }}
@@ -162,17 +162,17 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
-        buttonLink="/projects/slice"
+        title="Full Stack Website With Career Portal."
+        description="Build a full stack Website with a seprate Career module for a start-up to manage hiring applicants."
+        buttonText="Visit Website"
+        buttonLink="https://onelogica.com"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
           textures: [
             {
-              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
-              placeholder: sliceTexturePlaceholder,
+              srcSet: `${websiteTexture} 800w, ${websiteTextureLarge} 1920w`,
+              placeholder: websiteTexturePlaceholder,
             },
           ],
         }}
@@ -315,7 +315,7 @@ export const Home = () => {
                   <img 
               src="app\routes\home\CloudImg.png" 
               alt="Web Development" 
-              style={{ width: '100%', marginBottom: '20px', float: 'left',}} 
+              style={{ width: '80%', marginBottom: '20px', float: 'left',}} 
             />
                     <ProjectSectionHeading level={4} as="h3">
                       Cloud and Deployment Excellence
