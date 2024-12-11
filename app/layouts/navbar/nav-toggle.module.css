@@ -11,6 +11,7 @@
 
     @media (--mediaMobile), (--mediaMobileLS) {
       display: flex;
+      /* right: 10%; */
     }
   }
 
