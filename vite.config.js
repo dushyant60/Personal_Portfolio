@@ -3,6 +3,7 @@ import {
   cloudflareDevProxyVitePlugin as remixCloudflareDevProxy,
 } from '@remix-run/dev';
 import { defineConfig } from 'vite';
+import glsl from 'vite-plugin-glsl';
 import jsconfigPaths from 'vite-jsconfig-paths';
 import mdx from '@mdx-js/rollup';
 import remarkFrontmatter from 'remark-frontmatter';
@@ -34,5 +35,6 @@ export default defineConfig({
       },
     }),
     jsconfigPaths(),
+    glsl(),
   ],
 });
