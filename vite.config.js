@@ -4,7 +4,6 @@ import {
 } from '@remix-run/dev';
 import { defineConfig } from 'vite';
 import jsconfigPaths from 'vite-jsconfig-paths';
-import glsl from 'vite-plugin-glsl';
 import mdx from '@mdx-js/rollup';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
@@ -35,6 +34,5 @@ export default defineConfig({
       },
     }),
     jsconfigPaths(),
-    glsl(),
   ],
 });
