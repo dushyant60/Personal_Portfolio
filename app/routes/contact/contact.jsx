@@ -6,16 +6,12 @@ import { Heading } from '~/components/heading';
 import { Icon } from '~/components/icon';
 import { Input } from '~/components/input';
 import { Section } from '~/components/section';
-import { Text } from '~/components/text';
 import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
 import { useFormInput } from '~/hooks';
-import { useRef, lazy, useMemo, Suspense} from 'react';
+import { useRef, useMemo, Suspense} from 'react';
 import { cssProps, msToNum, numToMs } from '~/utils/style';
-import { baseMeta } from '~/utils/meta';
-import { Form, useActionData, useNavigation } from '@remix-run/react';
-import { json } from '@remix-run/cloudflare';
-import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
+import {useActionData, useNavigation } from '@remix-run/react';
 import styles from './contact.module.css';
 
 import { Earth, EarthSection } from '../projects.call-center-analysis/earth';
@@ -28,17 +24,16 @@ import {
   ProjectTextRow,
 } from '~/layouts/project';
 
-export const meta = () => {
-  return baseMeta({
-    title: 'Contact',
-    description:
-      'Send me a message if you’re interested in discussing a project or if you just want to say hi',
-  });
-};
+// export const meta = () => {
+//   return baseMeta({
+//     title: 'Contact',
+//     description:
+//       'Send me a message if you’re interested in discussing a project or if you just want to say hi',
+//   });
+// };
 
 const MAX_EMAIL_LENGTH = 512;
 const MAX_MESSAGE_LENGTH = 4096;
-const EMAIL_PATTERN = /(.+)@(.+){2,}\.(.+){2,}/;
 
 
 export const Contact = () => {
