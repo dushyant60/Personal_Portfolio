@@ -114,7 +114,7 @@ export const Home = () => {
         buttonLink="/projects/call-center-analysis"
         model={{
           type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
+          alt: 'A Future of Call Center Analytics',
           textures: [
             {
               srcSet: `${vachTexture} 1280w, ${vachTextureLarge} 2560w`,
@@ -135,7 +135,7 @@ export const Home = () => {
         buttonLink="https://github.com/dushyant60/Video_Avatar/blob/main/README.md"
         model={{
           type: 'phone',
-          alt: 'App login screen',
+          alt: 'TTS Avatar Sales Agent',
           textures: [
             {
               srcSet: `${avatarTexture} 375w, ${avatarTextureLarge} 750w`,
@@ -159,7 +159,7 @@ export const Home = () => {
         buttonLink="https://onelogica.com"
         model={{
           type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
+          alt: 'Full Stack Website With Career Portal',
           textures: [
             {
               srcSet: `${websiteTexture} 800w, ${websiteTextureLarge} 1920w`,

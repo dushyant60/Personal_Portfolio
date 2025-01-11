@@ -61,18 +61,22 @@ export const DisplacementSphere = props => {
     renderer.current.setSize(innerWidth, innerHeight);
     renderer.current.setPixelRatio(1);
     renderer.current.outputColorSpace = LinearSRGBColorSpace;
-
+  
     camera.current = new PerspectiveCamera(54, innerWidth / innerHeight, 0.1, 100);
-    camera.current.position.z = 52;
-
+    camera.current.position.set(0, 50, 50); // Adjust the y and z positions
+    camera.current.lookAt(0, 0, 0); // Point the camera towards the sphere
+  
     scene.current = new Scene();
 
-    material.current = new MeshPhongMaterial({
-      color: 0x1e90ff, // Dodger blue base color
-      emissive: 0xff4500, // Orange-red glow
-      emissiveIntensity: 0.1,
-      shininess: 100, // High gloss
-    });
+   material.current = new MeshPhongMaterial({
+  color: 0x1e90ff,
+  emissive: 0x2a2a2a,
+  emissiveIntensity: 1,
+  shininess: 150,
+  specular: 0x666666,
+  transparent: true,
+  opacity: 0.1,
+});
 
     material.current.onBeforeCompile = shader => {
       uniforms.current = UniformsUtils.merge([
