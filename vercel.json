@@ -1,9 +1,15 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build:fix",
   "outputDirectory": "build/client",
-  "framework": "remix",
+  "framework": null,
   "installCommand": "npm install",
   "devCommand": "npm run dev",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -23,19 +29,13 @@
       ]
     },
     {
-      "source": "/static/(.*)",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }

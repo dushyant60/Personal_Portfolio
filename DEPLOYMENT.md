@@ -22,18 +22,18 @@ This guide will help you deploy your personal portfolio website to Vercel or Net
 1. Go to [vercel.com](https://vercel.com) and sign up/login
 2. Click "New Project"
 3. Import your GitHub repository
-4. Vercel will automatically detect it's a Remix app
-5. Configure the following settings:
-   - **Framework Preset**: Remix
-   - **Build Command**: `npm run build`
+4. Configure the following settings:
+   - **Framework Preset**: Other (not Remix - we're using static build)
+   - **Build Command**: `npm run build:fix`
    - **Output Directory**: `build/client`
    - **Install Command**: `npm install`
-6. Click "Deploy"
+5. Click "Deploy"
 
-**Why Vercel is better for Remix:**
-- ✅ Native Remix support with SSR
-- ✅ Automatic serverless functions
+**Why Vercel works well:**
+- ✅ Fast static site deployment
+- ✅ Automatic CDN distribution
 - ✅ Better asset handling
+- ✅ No serverless function crashes
 - ✅ No white screen issues
 
 ### Step 3: Environment Variables (Optional)
