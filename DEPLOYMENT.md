@@ -68,7 +68,10 @@ Your project is now properly configured for Cloudflare Pages:
    - **Build command**: `npm run build`
    - **Build output directory**: `build/client`
    - **Root directory**: `/` (leave empty)
+   - **Node.js version**: 18 (or latest)
 5. Click "Save and Deploy"
+
+**Important**: The `wrangler.toml` file has been removed as it's not needed for Pages deployment and was causing conflicts.
 
 ### Step 2: Environment Variables (Optional)
 If you want theme persistence or contact form:
