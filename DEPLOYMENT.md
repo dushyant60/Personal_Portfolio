@@ -8,7 +8,7 @@ This guide will help you deploy your personal portfolio website to Vercel or Net
 2. Your portfolio code pushed to a GitHub repository
 3. Node.js 18+ installed locally (for testing)
 
-## Option 1: Deploy to Vercel (Recommended)
+## Option 1: Deploy to Vercel (Recommended - Best for Remix)
 
 ### Step 1: Prepare Your Repository
 1. Push your code to GitHub if you haven't already:
@@ -29,6 +29,12 @@ This guide will help you deploy your personal portfolio website to Vercel or Net
    - **Output Directory**: `build/client`
    - **Install Command**: `npm install`
 6. Click "Deploy"
+
+**Why Vercel is better for Remix:**
+- ✅ Native Remix support with SSR
+- ✅ Automatic serverless functions
+- ✅ Better asset handling
+- ✅ No white screen issues
 
 ### Step 3: Environment Variables (Optional)
 If you want to use the contact form or theme persistence:
@@ -65,7 +71,7 @@ Your project is now properly configured for Cloudflare Pages:
 3. Connect your GitHub account and select your repository
 4. Configure build settings:
    - **Framework preset**: Remix
-   - **Build command**: `npm run build:spa`
+   - **Build command**: `npm run build:fix`
    - **Build output directory**: `build/client`
    - **Root directory**: `/` (leave empty)
    - **Node.js version**: 18 (or latest)
@@ -73,9 +79,10 @@ Your project is now properly configured for Cloudflare Pages:
 5. Click "Save and Deploy"
 
 **Important**: 
-- Use `npm run build:spa` for static site generation
-- The `_redirects` file handles client-side routing
+- Use `npm run build:fix` to prevent white screen issues
+- The fixed build includes proper error handling
 - Assets and 3D models will be properly served
+- If you still get white screen, try Vercel instead
 
 ### Step 2: Environment Variables (Optional)
 If you want theme persistence or contact form:

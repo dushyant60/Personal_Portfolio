@@ -25,6 +25,8 @@ const indexHtml = `<!DOCTYPE html>
     <link rel="shortcut_icon" href="/shortcut.png" type="image/png" sizes="64x64" />
     <link rel="apple-touch-icon" href="/icon-256.png" sizes="256x256" />
     <link rel="author" href="/humans.txt" type="text/plain" />
+    <link rel="stylesheet" href="/assets/root-C_HFQy6x.css" />
+    <link rel="stylesheet" href="/assets/index-Ben_IK3z.css" />
     <style>
       /* Theme styles */
       :root {

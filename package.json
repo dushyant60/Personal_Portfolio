@@ -6,6 +6,7 @@
     "build": "remix vite:build",
     "build:static": "remix vite:build --mode production && node ./scripts/build-static.js",
     "build:spa": "remix vite:build --mode spa && node ./scripts/build-static.js",
+    "build:fix": "remix vite:build --mode spa && node ./scripts/build-static-fix.js",
     "dev": "node ./scripts/dev.cjs && remix vite:dev",
     "start": "wrangler pages dev ./build/client",
     "start:static": "npx serve build/client",
