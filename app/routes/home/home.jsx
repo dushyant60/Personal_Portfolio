@@ -153,10 +153,10 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Full Stack Website With Career Portal."
-        description="Build a full stack Website with a seprate Career module for a start-up to manage hiring applicants."
+        title="Full Stack Website For Australian Based Real Estate Bussiness."
+        description="Build a full stack Website with a proper sturcture and handled deployement and hosting integrated Azure Blob and Real-Time Database"
         buttonText="Visit Website"
-        buttonLink="https://onelogica.com"
+        buttonLink="https://gangarealestate.com.au/"
         model={{
           type: 'laptop',
           alt: 'Full Stack Website With Career Portal',

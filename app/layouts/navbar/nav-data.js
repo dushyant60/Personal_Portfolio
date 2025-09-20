@@ -20,11 +20,11 @@ export const navLinks = [
 ];
 
 export const socialLinks = [
-  {
-    label: 'SuperProf',
-    url: `https://www.superprof.co.in/experienced-professional-offering-comprehensive-lessons-basic-computing-web-development-windows-and-databases.html`,
-    icon: 'superprof',
-  },
+  // {
+  //   label: 'SuperProf',
+  //   url: `https://www.superprof.co.in/experienced-professional-offering-comprehensive-lessons-basic-computing-web-development-windows-and-databases.html`,
+  //   icon: 'superprof',
+  // },
   {
     label: 'linkedin',
     url: `https://www.linkedin.com/in/dushyant60`,

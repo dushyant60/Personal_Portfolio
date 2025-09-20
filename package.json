@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
+    "build:static": "remix vite:build --mode production",
     "dev": "node ./scripts/dev.cjs && remix vite:dev",
     "start": "wrangler pages dev ./build/client",
+    "start:static": "npx serve build/client",
     "postinstall": "node ./scripts/draco.cjs"
   },
   "dependencies": {
