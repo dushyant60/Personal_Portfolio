@@ -65,13 +65,17 @@ Your project is now properly configured for Cloudflare Pages:
 3. Connect your GitHub account and select your repository
 4. Configure build settings:
    - **Framework preset**: Remix
-   - **Build command**: `npm run build`
+   - **Build command**: `npm run build:spa`
    - **Build output directory**: `build/client`
    - **Root directory**: `/` (leave empty)
    - **Node.js version**: 18 (or latest)
+   - **Deploy command**: Leave empty (Pages handles this automatically)
 5. Click "Save and Deploy"
 
-**Important**: The `wrangler.toml` file has been removed as it's not needed for Pages deployment and was causing conflicts.
+**Important**: 
+- Use `npm run build:spa` for static site generation
+- The `_redirects` file handles client-side routing
+- Assets and 3D models will be properly served
 
 ### Step 2: Environment Variables (Optional)
 If you want theme persistence or contact form:
