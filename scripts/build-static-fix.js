@@ -40,6 +40,26 @@ const indexHtml = `<!DOCTYPE html>
     <link rel="shortcut_icon" href="/shortcut.png" type="image/png" sizes="64x64" />
     <link rel="apple-touch-icon" href="/icon-256.png" sizes="256x256" />
     <link rel="author" href="/humans.txt" type="text/plain" />
+    
+    <!-- Load all CSS files -->
+    <link rel="stylesheet" href="/assets/root-C_HFQy6x.css" />
+    <link rel="stylesheet" href="/assets/index-Ben_IK3z.css" />
+    <link rel="stylesheet" href="/assets/server-build-OX0Yg8e-.css" />
+    <link rel="stylesheet" href="/assets/route-B-2Ki8cZ.css" />
+    <link rel="stylesheet" href="/assets/route-C-22_ukK.css" />
+    <link rel="stylesheet" href="/assets/route-BxusY20e.css" />
+    <link rel="stylesheet" href="/assets/route-2ahMLohn.css" />
+    <link rel="stylesheet" href="/assets/project-C8oXv4p4.css" />
+    <link rel="stylesheet" href="/assets/image-MLIZ5YGx.css" />
+    <link rel="stylesheet" href="/assets/error-BT7XG2_u.css" />
+    <link rel="stylesheet" href="/assets/list-CzRq1eoW.css" />
+    <link rel="stylesheet" href="/assets/meta-CsIKEH-0.css" />
+    <link rel="stylesheet" href="/assets/divider-RCNywGVV.css" />
+    <link rel="stylesheet" href="/assets/decoder-text-DEyQaJJ0.css" />
+    <link rel="stylesheet" href="/assets/displacement-sphere-CkSsqPFB.css" />
+    <link rel="stylesheet" href="/assets/route-BUKkFPyt.css" />
+    <link rel="stylesheet" href="/assets/route-D3qy7mX.css" />
+    
     <style>
       /* Basic styles to prevent white screen */
       * {
