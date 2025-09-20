@@ -57,11 +57,32 @@ Same as Vercel - push your code to GitHub.
 
 ## Option 3: Keep Using Cloudflare Pages
 
-Your project is already configured for Cloudflare Pages:
+Your project is now properly configured for Cloudflare Pages:
+
+### Step 1: Deploy to Cloudflare Pages
 1. Go to [pages.cloudflare.com](https://pages.cloudflare.com)
-2. Connect your GitHub repository
-3. Use the existing `wrangler.toml` configuration
-4. Deploy with the default settings
+2. Click "Create a project" > "Connect to Git"
+3. Connect your GitHub account and select your repository
+4. Configure build settings:
+   - **Framework preset**: Remix
+   - **Build command**: `npm run build`
+   - **Build output directory**: `build/client`
+   - **Root directory**: `/` (leave empty)
+5. Click "Save and Deploy"
+
+### Step 2: Environment Variables (Optional)
+If you want theme persistence or contact form:
+1. Go to your project settings
+2. Navigate to "Environment variables"
+3. Add:
+   - `SESSION_SECRET`: Generate a random string
+   - `VITE_SITE_URL`: Your Cloudflare Pages domain
+
+### Troubleshooting Cloudflare Pages
+If you encounter deployment issues:
+1. **Build fails**: Ensure Node.js version is 18+
+2. **Wrangler errors**: The `wrangler.toml` is now properly configured
+3. **KV namespace errors**: The KV binding is optional and can be removed if not needed
 
 ## Testing Your Deployment
 
