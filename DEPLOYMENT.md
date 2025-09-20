@@ -24,7 +24,7 @@ This guide will help you deploy your personal portfolio website to Vercel or Net
 3. Import your GitHub repository
 4. Configure the following settings:
    - **Framework Preset**: Other (not Remix - we're using static build)
-   - **Build Command**: `npm run build:fix`
+   - **Build Command**: `npm run build:vercel`
    - **Output Directory**: `build/client`
    - **Install Command**: `npm install`
 5. Click "Deploy"
