@@ -141,7 +141,7 @@ Your portfolio already includes:
 - ✅ Modern CSS with custom properties
 - ✅ 3D models with proper loading
 - ✅ Responsive design
-- ✅ SEO-friendly structure
+- ✅ SEO-friendly structur
 
 ## Troubleshooting
 
