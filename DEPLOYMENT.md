@@ -81,8 +81,14 @@ If you want theme persistence or contact form:
 ### Troubleshooting Cloudflare Pages
 If you encounter deployment issues:
 1. **Build fails**: Ensure Node.js version is 18+
-2. **Wrangler errors**: The `wrangler.toml` is now properly configured
+2. **Wrangler errors**: Use Cloudflare Pages dashboard instead of direct wrangler deploy
 3. **KV namespace errors**: The KV binding is optional and can be removed if not needed
+4. **Worker name errors**: Use Cloudflare Pages, not Workers (they're different services)
+
+### Important: Cloudflare Pages vs Workers
+- **Cloudflare Pages**: For static sites and full-stack apps (like your Remix app)
+- **Cloudflare Workers**: For serverless functions only
+- **Your portfolio**: Should use Cloudflare Pages, not Workers
 
 ## Testing Your Deployment
 
