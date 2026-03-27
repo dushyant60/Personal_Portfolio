@@ -14,10 +14,23 @@ if (!existsSync(buildDir)) {
 // Get all CSS files from the assets directory
 const assetsDir = join(buildDir, 'assets');
 let cssLinks = '';
+let entryScript = '/assets/entry.client-Dsqyoi5j.js'; // Default fallback
 if (existsSync(assetsDir)) {
   const files = readdirSync(assetsDir);
   const cssFiles = files.filter(file => file.endsWith('.css'));
   cssLinks = cssFiles.map(file => `    <link rel="stylesheet" href="/assets/${file}" />`).join('\n');
+  // Try to find the entry client JS dynamically to avoid hardcoded filenames
+  const entryCandidates = files.filter(f => f.startsWith('entry.client') && f.endsWith('.js'));
+  if (entryCandidates.length > 0) {
+    entryScript = `/assets/${entryCandidates[0]}`;
+  } else {
+    // Fallback: try for any JS that looks like a client entry
+    const anyEntry = files.find(f => f.includes('entry') && f.endsWith('.js'));
+    if (anyEntry) entryScript = `/assets/${anyEntry}`;
+  }
+  // Try to find the manifest file so Remix's runtime globals are available
+  const manifestCandidate = files.find(f => f.startsWith('manifest-') && f.endsWith('.js'));
+  var manifestScript = manifestCandidate ? `/assets/${manifestCandidate}` : null;
 }
 
 const indexHtml = `<!DOCTYPE html>
@@ -140,10 +153,16 @@ ${cssLinks}
         }, 500);
       });
       
+      // Load the manifest (sets window.__remixManifest) if present
+      ${manifestScript ? `const manifestScript = document.createElement('script');
+      manifestScript.src = '${manifestScript}';
+      manifestScript.defer = true;
+      document.head.appendChild(manifestScript);` : ''}
+
       // Load the main JavaScript
       const script = document.createElement('script');
       script.type = 'module';
-      script.src = '/assets/entry.client-Dsqyoi5j.js';
+      script.src = '${entryScript}';
       script.onerror = function() {
         clearTimeout(loadTimeout);
         showError('Failed to load the portfolio application. Please check your internet connection.');
