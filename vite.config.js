@@ -32,6 +32,12 @@ export default defineConfig({
     }),
     remix({
       presets: [vercelPreset()],
+      // Collapse all routes into a single serverless function.
+      // Without this, vercelPreset creates per-route symlinks in
+      // /vercel/output/functions/ which causes EEXIST collisions.
+      serverBundles() {
+        return 'server';
+      },
       routes(defineRoutes) {
         return defineRoutes(route => {
           route('/', 'routes/home/route.js', { index: true });
