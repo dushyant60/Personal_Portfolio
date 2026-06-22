@@ -16,8 +16,8 @@ const indexHtml = `<!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#111" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#F2F2F2" />
+    <meta name="color-scheme" content="light dark" />
     <title>Dushyant Singh - Portfolio</title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" href="/favicon.ico" />
@@ -28,17 +28,17 @@ const indexHtml = `<!DOCTYPE html>
     <style>
       /* Theme styles */
       :root {
-        --color-text: oklch(0.9 0.005 106);
-        --color-background: oklch(0.1 0.005 106);
-        --color-primary: oklch(0.7 0.15 106);
-        --color-secondary: oklch(0.6 0.1 106);
-      }
-      
-      [data-theme="light"] {
         --color-text: oklch(0.2 0.005 106);
         --color-background: oklch(0.95 0.005 106);
         --color-primary: oklch(0.4 0.15 106);
         --color-secondary: oklch(0.5 0.1 106);
+      }
+      
+      [data-theme="dark"] {
+        --color-text: oklch(0.9 0.005 106);
+        --color-background: oklch(0.1 0.005 106);
+        --color-primary: oklch(0.7 0.15 106);
+        --color-secondary: oklch(0.6 0.1 106);
       }
       
       * {
@@ -68,7 +68,7 @@ const indexHtml = `<!DOCTYPE html>
       }
     </style>
   </head>
-  <body data-theme="dark">
+  <body data-theme="light">
     <div id="root">
       <div class="loading">Loading Portfolio...</div>
     </div>

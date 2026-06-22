@@ -15,6 +15,7 @@ import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
 import { Profile } from './profile';
 import { ProjectSummary } from './project-summary';
+import { TipOfIceberg } from './tip-of-iceberg';
 import { useEffect, useRef, useState, lazy, useMemo, Suspense } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
@@ -53,10 +54,11 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectShowcase = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectShowcase, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -167,6 +169,11 @@ export const Home = () => {
             },
           ],
         }}
+      />
+      <TipOfIceberg
+        id="project-showcase"
+        sectionRef={projectShowcase}
+        visible={visibleSections.includes(projectShowcase.current)}
       />
       <Footer />
     </div>

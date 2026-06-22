@@ -18,13 +18,13 @@ import styles from './profile.module.css';
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-    <DecoderText text="Hola Amigos" start={visible} delay={500} />
+      <DecoderText text="Hola Amigos" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-    I’m Dushyant, an application developer with over 2 years of experience in web development, cloud solutions, and AI-driven applications. I specialize in building scalable, responsive web applications using technologies like React, Node.js, and MongoDB.
+      I’m Dushyant, a full-stack engineer and solutions architect with over 3+ years of experience specializing in cloud-native platforms, Generative AI (GenAI) applications, and Agentic AI systems. I design and build highly scalable, responsive web applications utilizing modern technologies like React, Node.js, and next-generation frameworks.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-    Currently, I work with Azure and Google Cloud Platform (GCP) for deploying, managing, and optimizing applications. I am also Azure AI-900 certified, with expertise in integrating AI capabilities such as prompt engineering, RAG, and large language models (LLMs) into projects.   In addition to development, I create modern UI/UX designs using Canva and Figma and enjoy experimenting with cutting-edge tools and technologies. Feel free to reach out if you’d like to collaborate or discuss a project!
+      Currently, I work with Azure and Google Cloud Platform (GCP) to architect, deploy, and optimize secure cloud infrastructures. As an Azure AI-900 certified professional, I specialize in implementing advanced AI workflows including multi-agent orchestration, RAG pipelines, prompt engineering, and LLM integrations. Beyond core backend and AI engineering, I translate modern UI/UX designs from Figma and Canva into high-fidelity web experiences while constantly experimenting with emerging technologies. Let's connect if you're looking to build something intelligent and future-proof!
     </Text>
   </Fragment>
 );
@@ -71,7 +71,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   About me
                 </div>
               </div>
-              <div className={styles.image} style={{borderRadius:"20px"}}>
+              <div className={styles.image} style={{ borderRadius: "20px" }}>
                 <Image
                   reveal
                   delay={100}

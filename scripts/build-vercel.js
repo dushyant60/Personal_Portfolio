@@ -38,8 +38,8 @@ const indexHtml = `<!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#111" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#F2F2F2" />
+    <meta name="color-scheme" content="light dark" />
     <title>Dushyant Singh - Portfolio</title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" href="/favicon.ico" />
@@ -60,8 +60,8 @@ ${cssLinks}
       html, body {
         height: 100%;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background-color: #111;
-        color: #fff;
+        background-color: #F2F2F2;
+        color: #111;
         overflow-x: hidden;
       }
       
@@ -84,9 +84,9 @@ ${cssLinks}
         display: inline-block;
         width: 20px;
         height: 20px;
-        border: 2px solid #333;
+        border: 2px solid #ddd;
         border-radius: 50%;
-        border-top-color: #fff;
+        border-top-color: #111;
         animation: spin 1s ease-in-out infinite;
         margin-left: 10px;
       }
