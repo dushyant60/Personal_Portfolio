@@ -1,5 +1,4 @@
 import { vitePlugin as remix } from '@remix-run/dev';
-import { vercelPreset } from '@vercel/remix/vite';
 import { defineConfig } from 'vite';
 import jsconfigPaths from 'vite-jsconfig-paths';
 import mdx from '@mdx-js/rollup';
@@ -31,13 +30,6 @@ export default defineConfig({
       providerImportSource: '@mdx-js/react',
     }),
     remix({
-      presets: [vercelPreset()],
-      // Collapse all routes into a single serverless function.
-      // Without this, vercelPreset creates per-route symlinks in
-      // /vercel/output/functions/ which causes EEXIST collisions.
-      serverBundles() {
-        return 'server';
-      },
       routes(defineRoutes) {
         return defineRoutes(route => {
           route('/', 'routes/home/route.js', { index: true });
