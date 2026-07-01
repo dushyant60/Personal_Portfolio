@@ -10,7 +10,7 @@ import { Text } from '~/components/text';
 import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
 import { useFormInput } from '~/hooks';
-import { useRef, lazy, useMemo, Suspense} from 'react';
+import { useRef, lazy, useMemo, Suspense } from 'react';
 import { cssProps, msToNum, numToMs } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import { Form, useActionData, useNavigation } from '@remix-run/react';
@@ -176,7 +176,7 @@ export const Contact = () => {
           </div>
         )}
       </Transition>
-  
+
       <ThemeProvider theme="dark" data-invert>
         <Suspense>
           <Earth
@@ -251,7 +251,7 @@ export const Contact = () => {
                 <ProjectSectionContent>
                   <ProjectTextRow center>
                     <ProjectSectionHeading>
-                      Hello, Welcome to my Earth!
+                      Hello, Welcome to my World!
                     </ProjectSectionHeading>
                     <ProjectSectionText>
                       Harnessing a good expertise in application development, deployment,
@@ -274,11 +274,11 @@ export const Contact = () => {
               <ProjectSection>
                 <ProjectSectionContent width="xl">
                   <ProjectTextRow justify="end" width="s">
-                  <img 
-              src="app\routes\home\WebDevImg.png" 
-              alt="Web Development" 
-              style={{ width: '100%', marginBottom: '20px', float: 'left',}} 
-            />
+                    <img
+                      src="app\routes\home\WebDevImg.png"
+                      alt="Web Development"
+                      style={{ width: '100%', marginBottom: '20px', float: 'left', }}
+                    />
                     <ProjectSectionHeading level={4} as="h3">
                       Mastering Modern Web Development
                     </ProjectSectionHeading>
@@ -311,11 +311,11 @@ export const Contact = () => {
               <ProjectSection>
                 <ProjectSectionContent width="xl">
                   <ProjectTextRow justify="start" width="s">
-                  <img 
-              src="app\routes\home\CloudImg.png" 
-              alt="Web Development" 
-              style={{ width: '80%', marginBottom: '20px', float: 'left',}} 
-            />
+                    <img
+                      src="app\routes\home\CloudImg.png"
+                      alt="Web Development"
+                      style={{ width: '80%', marginBottom: '20px', float: 'left', }}
+                    />
                     <ProjectSectionHeading level={4} as="h3">
                       Cloud and Deployment Excellence
                     </ProjectSectionHeading>
@@ -353,11 +353,11 @@ export const Contact = () => {
               <ProjectSection>
                 <ProjectSectionContent width="xl">
                   <ProjectTextRow justify="end" width="s">
-                  <img 
-              src="app\routes\home\AIandLLMImg.png" 
-              alt="Web Development" 
-              style={{ width: '100%', marginBottom: '20px', float: 'left',}} 
-            />
+                    <img
+                      src="app\routes\home\AIandLLMImg.png"
+                      alt="Web Development"
+                      style={{ width: '100%', marginBottom: '20px', float: 'left', }}
+                    />
                     <ProjectSectionHeading level={4} as="h3">
                       Pioneering AI and LLM Applications
                     </ProjectSectionHeading>

@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "sideEffects": false,
+  "sideEffects": true,
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
