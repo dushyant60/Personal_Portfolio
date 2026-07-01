@@ -9,7 +9,10 @@ import vachTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder
 import vachTexture from '~/assets/vachTexture.png';
 import websiteTexture from '~/assets/website_image.png';
 import websiteTextureLarge from '~/assets/website_image_large.png';
-import websiteTexturePlaceholder from '~/assets/website_image_placeholder.jpg'
+import websiteTexturePlaceholder from '~/assets/website_image_placeholder.jpg';
+import landmarkTexture from '~/assets/landmark.png';
+import landmarkTextureLarge from '~/assets/landmarkLarge.png';
+import landmarkTexturePlaceholder from '~/assets/landmarkPlaceholder.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -155,17 +158,17 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Full Stack Website For Australian Based Real Estate Bussiness."
-        description="Build a full stack Website with a proper sturcture and handled deployement and hosting integrated Azure Blob and Real-Time Database"
+        title="Landmark Institute"
+        description="A Full Stack website for a prestige Educational Institute with proper seo and other features..."
         buttonText="Visit Website"
-        buttonLink="https://gangarealestate.com.au/"
+        buttonLink="https://www.landmarkinstitute.com/"
         model={{
           type: 'laptop',
-          alt: 'Full Stack Website With Career Portal',
+          alt: 'Landmark Institute Website',
           textures: [
             {
-              srcSet: `${websiteTexture} 800w, ${websiteTextureLarge} 1920w`,
-              placeholder: websiteTexturePlaceholder,
+              srcSet: `${landmarkTexture} 1280w, ${landmarkTextureLarge} 2560w`,
+              placeholder: landmarkTexturePlaceholder,
             },
           ],
         }}
